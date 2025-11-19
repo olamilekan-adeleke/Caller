@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "exclamation_mark_dark_blue.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

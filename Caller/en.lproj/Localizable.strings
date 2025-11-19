@@ -1,0 +1,569 @@
+
+//MARK: - GENERAL
+"default" = "default";
+"of" = "of";
+"yes" = "Yes";
+"no" = "No";
+"maybe" = "Maybe";
+"unknown" = "Unknown";
+"cancel" = "Cancel";
+"discard" = "Discard";
+"in_progress" = "In progress...";
+"continue" = "Continue";
+"next" = "Next";
+"submit" = "Submit";
+"back" = "Back";
+"stop" = "Stop";
+"pause" = "Pause";
+"insert_date" = "Insert date";
+"delete" = "Delete";
+"done" = "Done";
+"quit" = "Quit";
+"save" = "Save";
+"close" = "Close";
+"contact_us" = "Contact us";
+"keep_going" = "Continue";
+"skip" = "Skip for now";
+"no_character_left" = "No character left";
+"characters_left" = "characters left";
+"character_left" = "character left";
+"at" = "at";
+"textfield_format_error" = "That format doesn’t look right.";
+"remove" = "Remove";
+
+"delete_note" = "Delete Note?";
+"delete_note_message" = "Are you sure you want to delete this note? This action cannot be undone.";
+"enter_title" = "Enter Title";
+
+//MARK: - INTERNET CONNECTION
+"connect_internet_screen_title" = "Connect to the Internet";
+"connect_internet_screen_text" = "Make sure you are connected to a Wi-Fi or mobile network and try again.";
+"user_does_not_have_access" = "User does not have access.";
+"connect_internet_screen_try_again_button" = "Try again";
+
+//MARK: - TERMS AND CONDITIONS
+"terms_content" = "Your confidential data stays with you. Sama will not share this information with third parties.
+
+We promise that any conversation you have with us is completely confidential, so you can feel comfortable being open and honest about whatever is on your mind.
+
+By continuing, you acknowledge that you have read, understood and agree with our Terms and Privacy Policy.";
+"terms_agreement" = "I agree to the Terms and Conditions and Privacy Policy";
+"terms_agreement_bold_terms" = "Terms and Conditions";
+"terms_agreement_bold_privacy" = "Privacy Policy";
+
+//MARK: - SIGN IN
+"email" = "Email";
+"sign_in_email_placeholder" = "Type your email";
+"password" = "Password";
+
+//MARK: - LOGIN
+"check_email_screen_text" = "Check\nyour inbox";
+"check_email_screen_sub_text" = "To confirm your email address, tap the button in the email we sent to: ";
+"check_email_screen_button_text" = "Open your email app";
+    "check_email_screen_footer_link_text" = "Use password to sign in";
+
+"expired_magic_link_screen_title" = "Login";
+"expired_magic_link_screen_text" = "Link has expired";
+"expired_magic_link_screen_sub_text" = "An email has been sent to you. Follow the link to login";
+"expired_magic_link_screen_button_text" = "Check your inbox";
+
+"verify_password_screen_text" = "Verify your\npassword";
+"verify_password_screen_pw_title" = "YOUR PASSWORD";
+"verify_password_screen_pw_place_holder" = "Enter password";
+"verify_password_screen_footer_text" = "Don't have or forgot your password?";
+"verify_password_screen_footer_link_text" = "Forgotten password?";
+
+"verify_2fa_screen_title" = "Enter code";
+"verify_2fa_screen_text" = "Enter the code we've sent to";
+"verify_2fa_screen_sub_text" = "Haven't received an SMS?";
+"verify_2fa_screen_sub_link_text" = "Send again";
+
+"login_page_title" = "Reach your goals with Sama";
+"login_page_title_part1" = "Reach your goals";
+"login_with_sama" = "with Sama";
+"login_page_email_title" = "Please enter your email";
+"login_page_email_placeholder" = "Business email address";
+"login_page_email_sub_text" = "You will receive an email to confirm your address.";
+
+"check_email_screen_footer_link_text" = "Use password to sign in";
+
+//MARK: - ONBOARDING
+"sign_in_empl_steps_counter" = "Question %d of %d";
+
+"sign_in_empl_step_0_title" = "Coaching experience tailored for you";
+"sign_in_empl_step_0_content" = "To match you with the best coach for you, we would like you to tell us a bit about yourself.";
+
+"phone_number_step_page_title" = "Hi ";
+"phone_number_step_description" = "Answer these few questions and get the best coaching experience tailor-made for you.";
+"phone_number_step_question" = "What's your phone number?";
+"update_phone_number_title_label" = "Update your phone number";
+"phone_number_step_error" = "Phone number is invalid";
+"phone_number_step_footnote" = "This number will not be shared";
+
+"gender_identity_step_page_title" = "What gender do you Identify with?";
+"age_range_step_page_title" = "What is your age range?";
+"industry_step_page_title" = "Which industry do you work in?";
+"function_step_page_title" = "What is your function?";
+"position_step_page_title" = "What is your position?";
+
+"area_of_coaching_step_page_title" = "Area of coaching";
+"area_of_coaching_step_page_description" = "Pick the area you want to work on first.";
+"go_to_quiz_description" = "Unsure where to start with coaching?";
+"go_to_quiz_title" = "Take our 3 minutes quiz";
+
+"personal_values_step_page_title" = "Pick your 5 top values";
+"personal_values_step_page_description" = "Pick 5 values that you appreciate the most.";
+
+"personal_values_current_satisfaction_step_page_title" = "Rate your satisfaction in these areas";
+"personal_values_current_satisfaction_step_page_description" = "1 = Low satisfaction; 5 = Extremely satisfied";
+
+"coach_sex_step_page_title" = "Do you prefer your coach to be";
+"gender_idm" = "I don't mind";
+"gender_female" = "Female";
+"gender_male" = "Male";
+
+"coach_language_step_page_title" = "Coaching language";
+
+//MARK: - FINDING COACH
+"find_coach_title" = "Finding your coach";
+"find_coach_text_one" = "The best coach for you...";
+"find_coach_text_two" = "Science backed AI matching...";
+"find_coach_text_three" = "Empower your career...";
+"find_coach_text_four" = "A life of purpose...";
+"find_coach_text_five" = "We found your coach partner!";
+
+"found_coach_title" = "Your coach";
+"found_coach_subtitle" = "Based on your criteria";
+"explore_sama" = "Explore Sama";
+
+//MARK: - LEADERBOARD
+"lb_page_title" = "Leaderboard";
+"lb_missed_session_message" = "Your employer is being charged when you cancel or reschedule a session within 24 hours";
+"lb_missed_session_title" = "Missed sessions";
+"lb_completed_tasks_title" = "Tasks completed";
+"lb_completed_tasks_column_1_title" = "MONTH";
+"lb_completed_tasks_column_2_title" = "COMPLETED";
+"lb_completed_tasks_empty_message" = "You haven't completed any tasks yet";
+"lb_total_sessions_title" = "Total sessions";
+"lb_total_sessions_empty_message" = "You haven't had any sessions";
+"lb_missed_opportunities_no_show" = "No-show";
+"lb_missed_opportunities_cancelled" = "Cancelled";
+"lb_missed_opportunities_empty_message" = "You haven't missed any sessions. Great!";
+"lb_check_ins_title" = "Check-ins";
+"lb_check_ins_empty_message" = "There are no check-ins available for you yet";
+"oa_engagement_resilience" = "Resilience";
+"oa_engagement_adaptability" = "Adaptability";
+"oa_engagement_efficacy" = "Confidence";
+"oa_engagement_alignment" = "Alignment";
+"oa_engagement_motivation" = "Motivation";
+"oa_graph_title" = "Trends";
+"oa_graph_y_axis" = "Rating";
+"oa_graph_about" = "About";
+"oa_level_name" = "Level";
+"trackers_about_title" = "About Trackers";
+"trackers_about_sub_title" = "Tracks over time how you are doing on each engagement driver";
+"trackers_graph_empty_message" = "No measurement available";
+
+//MARK: - OUTCOME ASSESSMENT
+"oa_question_progress_label" = "Question %d of %d";
+"oa_question_answer_five" = "Peak";
+"oa_question_answer_four" = "Strong";
+"oa_question_answer_three" = "Good";
+"oa_question_answer_two" = "Moderate";
+"oa_question_answer_one" = "Low";
+"oa_question_reasons" = "Track your progress by answering a few questions.";
+"oa_question_title" = "Track your progress";
+"oa_question_cta" = "Proceed";
+"oa_question_final_cta" = "Save";
+"oa_close_title" = "Are you sure that you want to close the form?";
+"oa_close_sub_title" = "";
+"oa_close_accept" = "Yes";
+"oa_close_decline" = "No";
+
+//MARK: - GOALS
+"goal_list_title" = "My goals";
+"goal_list_sub_title" = "Your goals are shared with your coach";
+"goal_list_menu_all" = "All";
+"goal_list_menu_active" = "Active";
+"goal_list_menu_completed" = "Completed";
+"goal_list_info_title" = "Set SMART goals:";
+
+"goal_list_info_text_1" = "Specific";
+"goal_list_info_text_2" = "Measurable";
+"goal_list_info_text_3" = "Achievable";
+"goal_list_info_text_4" = "Relevant";
+"goal_list_info_text_5" = "Time Bound";
+"goal_list_due_by" = "Due by";
+"goal_list_no_due_by" = "Due date not set";
+"goal_list_due_by_past" = "Due date passed";
+"goal_list_empty_title" = "No goals added";
+"goal_list_empty_sub_title" = "Go ahead and add a goal by pressing the + button";
+"goal_list_empty_sub_title_coach" = "Encourage your coachee to create and track SMART (specific, measurable, actionable, realistic and time bound) goals.";
+"goal_list_empty_active_title" = "No active goals";
+"goal_list_empty_active_sub_title" = "";
+"goal_list_empty_completed_title" = "No completed goals";
+"goal_list_empty_completed_sub_title" = "";
+
+"goal_create_title" = "Create goal";
+"goal_edit_title" = "Edit";
+"goal_details_title" = "Goal details";
+"goal_free_text_title" = "Define your goal";
+"goal_detail_description_title" = "Description";
+"goal_free_text_placeholder" = "Type your goal...";
+"goal_progress_title" = "Track your progress";
+"goal_detail_progress_title" = "Progress";
+"goal_progress_1" = "Not started";
+"goal_progress_2" = "Started";
+"goal_progress_3" = "Halfway there!";
+"goal_progress_4" = "Nearly done";
+"goal_progress_5" = "Completed! Well done!";
+"goal_due_date_title" = "Due date:";
+"goal_due_date_passed_title" = "Due date passed:";
+"goal_due_date_completed_title" = "Completed on:";
+"goal_date_picker_button" = "Set due date";
+"goal_date_picker_set_date_button" = "Set date";
+"goal_date_picker_clear_date_button" = "Clear";
+"goal_delete_title" = "Are you sure you want to delete this goal?";
+"goal_delete_sub_title" = "This goal will be permanently deleted";
+"goal_delete_yes" = "Delete";
+"goal_delete_no" = "Cancel";
+
+//MARK: - TASKS
+"my_tasks" = "My tasks";
+
+"no_tasks_coachee_title" = "No tasks";
+"no_tasks_coachee_description" = "Your coach has not assigned any tasks";
+"coachee_tasks_none_title" = "You haven't assigned any tasks to %@.";
+"coachee_tasks_none_subtitle" = "Tasks are actions for your coachee to help them achieve their goals. Like articles/books to read, talks to watch...";
+
+//MARK: - PROFILE VIEW CONTROLLER
+"logout_popup_title" = "Do you wish to logout?";
+
+//MARK: - POPUP QUESTIONS
+"multianswers_popup_subtitle" = "You can choose several options.";
+
+//MARK: - COACH NOTES
+"select_area_of_coaching" = "Select area of coaching";
+
+//MARK: - BOOKINGS
+"select_date" = "Select date";
+"session_duration" = "Session duration";
+"select_start_time" = "Select session start time";
+"start_time_time_zone" = "Time shown in your time zone, ";
+"session_type" = "Select type of session";
+"session_description_summary" = "Your booking";
+"session_description_default_message" = "Pick your book preferences";
+"add_colleague_to_session" = "Add colleague to session";
+"add_colleague_information_label" = "Your colleague will receive an invitation to the session.";
+"add_edit_collegue_to_session_button_title" = "Add/edit colleague";
+"session_too_early_popup_title" = "Early Session!";
+"session_too_early_popup_message" = "Are you sure you wish to book this time? It looks a little early.";
+"session_too_late_popup_title" = "Late Session!";
+"session_too_late_popup_message" = "Are you sure you wish to book this time? It looks a little late.";
+"book_cta" = "Book session";
+"reschedule_cta" = "Reschedule";
+"booking_remove_guest_confirmation_popup_part_1" = "Remove ";
+"booking_remove_guest_confirmation_popup_part_2" = " from session?";
+
+//MARK: - BOOKINGS GUEST MANAGEMENT
+"booking_guest_management_page_title_label" = "Add colleague";
+"booking_guest_management_name_textfield_header" = "Name";
+"booking_guest_management_name_textfield_placeholder" = "Add name...";
+"booking_guest_management_email_textfield_header" = "Email";
+"booking_guest_management_email_textfield_placeholder" = "Add email...";
+"booking_guest_management_email_error_label" = "Please enter a valid email adress.";
+"booking_guest_management_you_can_add" = "You can add ";
+"booking_guest_management_email_textfield_header" = "Mail";
+"booking_guest_management_colleague" = " colleague";
+"booking_guest_management_added_colleagues_title_label" = "COLLEAGUES ADDED";
+"booking_unknown_guest" = "Unknown guest";
+"booking_add_guest_validate_button_title" = "Add colleague";
+"booking_add_guest_coach_validation_alert_message" = "Have you discussed with your coach inviting ";
+"booking_add_guest_availability_validation_alert_message_part_1" = "Did you confirm with ";
+"booking_add_guest_availability_validation_alert_message_part_2" = " their availability?";
+"booking_add_guest_check_consent_toaster_message" = "Check consent and availability prior to inviting your colleague";
+"booking_edit_guest_success" = "Guests list successfully updated!";
+"booking_edit_guest_error" = "An error occurred while uploading your changes, please try again later";
+
+//MARK: - HOME
+"good_morning" = "Good morning";
+"good_afternoon" = "Good afternoon";
+"good_evening" = "Good evening";
+"upcoming_milestones" = "Upcoming milestones";
+"book_a_session" = "Your coach is ready to speak with you. Book a session today.";
+"checklist_events_title" = "What's next?";
+"completed" = "COMPLETED";
+"checklist_events_seeAllButton_title" = "See all";
+"your_coach" = "Your coach";
+"know_your_strength" = "KNOW YOUR STRENGTHS";
+"complete_assessment" = "Complete your self assessment";
+"completed_assessment" = "Well done! Stay tuned for the next questions.";
+"personalization" = "PERSPECTIVE";
+"review_values" = "Review your top values";
+"satisfaction_levels" = "Review your satisfaction levels";
+"assessment_section_title" = "Self-assessment";
+"time_to_join_session" = "You will be able to join your session on ";
+"number_of_sessions_left_top_title" = " sessions left";
+"number_of_sessions_left_title" = "How does Sama calculate a session?";
+"number_of_sessions_left_text" = "A session equals 25 minutes. A session of 50 minutes equates to 2 sessions.";
+"coaching_session" = "Coaching session";
+
+//MARK: - CHECKLIST EVENT
+"checklist_page_title" = "Completed tasks";
+"checklist_completed_popup_title" = "Success!";
+"checklist_completed_popup_message" = "You're all set for your coaching journey. For best results, book regular sessions with your coach.";
+"checklist_completed_popup_done_button_title" = "Got it";
+
+//MARK: - COACH PROFILE
+"coaching_xp_accred" = "Certifications";
+"can_coach_on" = "Can coach on";
+"memberships" = "Memberships";
+
+//MARK: - CHAT
+"chat" = "Chat";
+"local_time_title" = "Their local time: ";
+"cannot_reply_discussion" = "You cannot reply to this discussion";
+"message_not_sent" = "Your message couldn’t be sent, please retry";
+"message_marked_urgent" = "Your message has been marked as urgent.";
+"type_message" = "Type your message here...";
+"chat_no_messages_title" = "You have no messages";
+"chat_no_messages_subtitle" = "Your messages will appear here when you initiate the conversation with your coach or when your coach send you a message.";
+"chat_error_title" = "An error happened";
+"chat_error_content" = "The chat service could not be connected.\nPlease retry to initialize a new connection.";
+"confidential_message" = "Messages with your coach are confidential and secure.";
+"urgent" = "Urgent";
+
+//MARK: - ACCOUNT
+"phone_number" = "Phone number:";
+"gender_identity" = "Gender identity:";
+"age_range" = "Age range";
+"position" = "Position:";
+"industry" = "Industry:";
+"function" = "Function:";
+"app_language" = "App language:";
+
+"area_of_coaching" = "Area of coaching:";
+"coach_gender_pref" = "Coach gender preference:";
+"coaching_language" = "Coaching language:";
+
+"more_about_title" = "About Sama";
+"more_faq_title" = "FAQ";
+"more_contact_title" = "Contact us";
+"contact_sama" = "Contact Sama";
+"terms_title" = "Terms and Conditions";
+"more_privacy_title" = "Privacy Policy";
+
+"change_password" = "Change password";
+"delete_account" = "Delete account";
+"logout" = "Log Out";
+
+"change_my_coach" = "Change my coach";
+"app_language_step_page_title" = "App Language";
+
+//MARK: - CHANGE COACH
+"change_coach_title" = "Changing your coach";
+"warning_rematch_label" = "If you would like to rematch with your current coach at a later date, please contact us on support@sama.io";
+"change_reason_label" = "Why do you want to change your coach?";
+"other_reason_title" = "Please specify reason";
+"other_reason_placeholder" = "Type your reason here...";
+"min_character_required" = "3 characters minimum";
+
+//MARK: - CHANGE PASSWORD
+"new_password_title" = "Change your password";
+"current_password_label" = "Current password";
+"current_password_error_label" = "This password is not your current one";
+"current_password_same_has_new_one" = "Your new password must be different to your current password";
+"current_password_placeholder" = "Type your current password";
+"new_password_label" = "New password";
+"new_password_uppercase_label" = "At least 1 upper case";
+"new_password_number_label" = "Must contain a number";
+"new_password_special_label" = "Must contain a special character (e.g. \"!&#!€!\")";
+"new_password_length_label" = "Must contain a minimum of 10 characters";
+"new_password_retype_label" = "Retype new password";
+"new_password_retype_error" = "Passwords don't match";
+"new_password_placeholder" = "Type your new password";
+"new_password_retype_placeholder" = "Retype password";
+"password_100_times_hibp" = "The password you entered has been disallowed.";
+"forget_password_title" = "We will send you a new password";
+
+//MARK: - GROUP QUESTION
+"group_question_number_explantion_part_1" = "From ";
+"group_question_number_explantion_part_2" = " (not likely) to ";
+"group_question_number_explantion_part_3" = " (very likely!)";
+"group_question_current_question" = "QUESTION";
+
+//MARK: - OLD
+"coach_presentation_subtitle" = "Based on your criteria, you have been matched with %@.";
+"see_profile" = "See profile ";
+
+"my_coach" = "My coach";
+
+"my_notes" = "My notes";
+"my_notes_subtitle" = "Confidential and only visible to you.";
+"no_saved_notes" = "You have no saved notes.";
+"notepad_save_error_message" = "Saving failed due to a connection issue";
+"today" = "Today";
+"previous_seven_days" = "Previous Seven days";
+"summary" = "Summary";
+"transcript" = "Transcript";
+"notes" = "Notes";
+"note_content" = "Note cannot be empty";
+"error" = "Error";
+
+"my_goals" = "My goals";
+"add" = "Add";
+"edit" = "Edit";
+"goals" = "Goals";
+"goals_hint_coachee" = "(Your coach can see your goals)";
+"no_goals_content" = "Your goals will be visible to your coach.";
+
+"about_sama" = "At Sama, we’re elevating engagement to make the world a better place. We do this by democratising coaching.
+
+We match you with the best coach for you, based on what you want to work on and your specific characteristics, such as your experience.
+
+Our coaches are put through a rigorous screening process to ensure that they have the highest qualifications and experience to best guide you within your professional and life journey.
+
+Once you are matched with your coach, you can have sessions through chat, call or video call.
+
+While Sama services are paid by your employer, any interaction you have with Sama will remain strictly confidential, as per the terms of our Privacy Policy.";
+
+"book_video_call" = "Book session";
+"guest" = "Guest";
+"join_session" = "Join session";
+"reschedule" = "Reschedule";
+
+"date_of_birth" = "Date of birth";
+"timeZone" = "Timezone";
+
+"password_100_times_hibp" = "This password has been deactivated";
+
+"personal_information" = "Personal";
+"coaching_preferences" = "Coaching preferences";
+
+"cancel_future_session_confirmation" = "Are you sure you want to cancel this session?";
+"cancel_future_session_less_24h_confirmation" = "As it is less than 24 hours before the session, your employer will be charged for the session.\nDo you still want to cancel?";
+"cancel_future_session_success" = "Your meeting is successfully cancelled";
+
+"book_success"= "Your meeting is successfully booked";
+"reschedule_success"= "Your meeting is successfully rescheduled";
+"reschedule_future_session_less_24h_confirmation" = "As it is less than 24 hours before the session, your employer will be charged for the session.\nDo you still want to Reschedule?";
+
+"today_date_prefix" = "Today, ";
+"server_error_retry" = "An error has occurred, please try again";
+"server_error_booking" = "Your video call session has not been booked, please contact Sama support at support@sama.io";
+"server_error_x_booking" = "You can only book up to 6 sessions at a time";
+
+"add_notes_placeholder" = "Add new...";
+"missing_authorization_title_video_call" = "Video call sessions";
+"missing_authorization_title_photo" = "Profile picture";
+"missing_authorization_title_audio_message" = "Audio message";
+"missing_authorization_action" = "Continue";
+"missing_authorization_all_video_call" = "Before starting your video call session, Sama needs to access to";
+"missing_authorization_all_profile_picture" = "Before uploading a profile picture, Sama needs to access to";
+"missing_authorization_audio_message" = "Before sending an audio message, Sama needs to access to";
+"missing_authorization_camera" = "your camera";
+"missing_authorization_micro" = "your microphone";
+"missing_authorization_gallery" = "your gallery";
+
+"video_call_connecting" = "Connecting";
+"video_call_waiting_coachee_title" = "Your coach is not here yet";
+"video_call_waiting_coachee_subtitle" = "Please wait for your coach to initiate the session";
+
+"alert_toaster_wrong_login" = "Please check your email or password";
+"alert_toaster_blocked_account" = "You have entered too many incorrect passwords. Please use \"forgot password\" option to unlock your account. If you are still experiencing problems please contact support@sama.io";
+"password_email_sent" = "We have sent you an email.";
+
+"send_feedback" = "Send";
+"rate_call" = "How would you rate the quality of the video?";
+"rate_your_coach" = "Rate your coach";
+"password_updated_confirmation" = "Your password has been updated !";
+
+"account" = "Account";
+
+"delete_availability" = "Delete availability";
+"this_one" = "This availability";
+"entire_serie" = "This and following recurring availability";
+
+"retry" = "Retry";
+
+"video" = "Video";
+"call" = "Call";
+
+"delete_account_confirmation" = "If you delete your data, you will be deleting your account. Do you wish to continue?";
+
+"api_deprecated_title" = "Time to update !";
+"api_deprecated_content" = "The latest version of the app is now available, please update before continuing";
+"api_deprecated_cta_title" = "Update now";
+"api_deprecated_popup_content" = "The latest version of the app is now available please update before continuing.\n\nYou can open Sama %d more times before you must upgrade";
+
+"uploading" = "Uploading";
+"media_upload_max_size" = "The maximum file size is 7MB";
+"new_voice_message" = "You have a new voice message";
+"sent_voice_message" = "Voice message sent";
+"missing_authorization_separator" = "and";
+
+"home" = "Home";
+"more" = "More";
+"leaderboard" = "Leaderboard";
+"add_notes_here" = "Add notes here";
+"session left" = "sessions left";
+"How do Sama calculate a session?" = "How does Sama calculate a session?";
+"A session equals 25 minutes." = "A session equals 25 minutes. A coaching session of 50 minutes equates to two sessions.";
+"Talk to your employeer if you would like to expand your allocated session time." = "";
+"Session limit achieved" = "Session limit achieved";
+"rating_coach_feedback_placeholder" = "";
+"rating_coach_feedback_question" = "Oh no! We would appreciate if you told us how to improve.";
+"rating_booking_feedback_placeholder" = "";
+"nps_feedback_placeholder" = "";
+"nps_question" = "How likely are you to recommend Sama to a friend or colleague?";
+"evaluation_page_title" = "";
+"nps_feedback_question_3" = "Great to hear! We would appreciate if you left us a comment:";
+
+//Rating View
+"not_likely" = "Not likely";
+"very_likely" = "Very likely";
+"please_pick_number" = "Please pick a number";
+"very_poor" = "Very poor";
+"poor" = "Poor";
+"ok" = "Ok";
+"good" = "Good";
+"very_good" = "Very good";
+
+"auth_could_not_connect_okta" = "An OKTA error has occurred, please try again";
+"auth_okta_not_assigned_to_client" = "Your company needs to enable your Sama access through OKTA.";
+
+"virus_deletion_message" = "This file couldn't be sent as it appears to contain potential security risks. You may want to check with your IT department for further assistance.";
+
+// MARK: - Note Taker Screen
+
+"note_taker_heading" = "Your session, your words. Securely captured.";
+"enhanced_coaching_title" = "Enhanced coaching experience";
+"enhanced_coaching_desc" = "Sama note taker helps both you and your coach stay present, boosting reflection, trust, and goal-setting.";
+"consent_audio_title" = "Consent and audio handling";
+"consent_audio_desc" = "Audio is transcribed and permanently deleted to keep the focus on the session.";
+"confidential_title" = "Confidential & secure";
+"confidential_desc" = "Your notes are strictly confidential and securely stored in full compliance with GDPR.";
+"personalized_title" = "Personalized experience";
+"personalized_desc" = "Insights from note-taking help refine and enhance your coaching journey.";
+"enable_button" = "Enable note taker";
+"disable_button" = "Disable note taker";
+"consent_notice" = "The note taker will start once all participants have given their consent.";
+
+"banner_journey_message" = "Your journey matters. This quick check-in is to reflect on your growth.";
+"sending_request" = "Sending request…";
+"start_note_taking" = "Start note-taking";
+"taking_notes" = "Taking notes";
+"note_taking_request_declined" = "Note-taking request declined";
+"note_taking_request_started" = "Note-taking started";
+"note_taking_request_stopped" = "Note-taking stopped";
+"note_taking_request_paused" = "Note-taking paused";
+
+"note_taking_pause_alert_title" = "Pause the note-taker";
+"note_taking_pause_alert_description" = "Notes so far are saved in the coachee’s “Note-Taker” section.";
+
+"note_taking_stop_alert_title" = "Stop the note-taker";
+"note_taking_stop_alert_description" = "Notes so far are saved in the coachee’s “Note-Taker” section.";
+
+"action_points" = "Action points";
+"key_takeaways" = "Key takeaways";
+"is_this_useful" = "Did you find this useful?";
