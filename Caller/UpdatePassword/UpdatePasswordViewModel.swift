@@ -40,11 +40,6 @@ class UpdatePasswordViewModel: ObservableObject {
     // MARK: - Alert State
     @Published var alertInfo: AlertInfo?
     
-    // MARK: - Secure Text Entry State
-    @Published var isCurrentPasswordSecure: Bool = true
-    @Published var isNewPasswordSecure: Bool = true
-    @Published var isRetypePasswordSecure: Bool = true
-    
     // MARK: - Properties
     var tokens: TokensMapper?
     var comingFromAccount: Bool = false
@@ -77,33 +72,26 @@ class UpdatePasswordViewModel: ObservableObject {
     
     // MARK: - Private Setup
     private func setupPublishers() {
-        // Validate new password as user types
         $newPassword
             .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
             .sink { [weak self] password in
                 self?.validateNewPassword(password)
-            }
-            .store(in: &cancellables)
+            }.store(in: &cancellables)
         
-        // Clear current password error when user starts typing
         $currentPassword
             .dropFirst()
             .sink { [weak self] _ in
                 if self?.currentPasswordError != nil {
                     self?.currentPasswordError = nil
                 }
-            }
-            .store(in: &cancellables)
+            }.store(in: &cancellables)
         
-        // Validate retype password
         Publishers.CombineLatest($newPassword, $retypePassword)
             .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
             .sink { [weak self] newPassword, retypePassword in
                 self?.validateRetypePassword(newPassword: newPassword, retypePassword: retypePassword)
-            }
-            .store(in: &cancellables)
+            }.store(in: &cancellables)
         
-        // Update continue button state
         Publishers.CombineLatest4($currentPassword, $newPassword, $retypePassword, $newPasswordHasUppercase)
             .combineLatest(Publishers.CombineLatest4($newPasswordHasNumber, $newPasswordHasSpecial, $newPasswordHasRequiredLength, $isLoading))
             .sink { [weak self] values in
@@ -118,8 +106,7 @@ class UpdatePasswordViewModel: ObservableObject {
                     hasRequiredLength: hasRequiredLength,
                     isLoading: isLoading
                 )
-            }
-            .store(in: &cancellables)
+            }.store(in: &cancellables)
     }
     
     // MARK: - Public Intents (Called from the View)
@@ -129,30 +116,14 @@ class UpdatePasswordViewModel: ObservableObject {
 //        TrackScreen.common.changePassword()
     }
     
-    /// Toggle secure text entry for current password field.
-    func toggleCurrentPasswordVisibility() {
-        isCurrentPasswordSecure.toggle()
-    }
-    
-    /// Toggle secure text entry for new password field.
-    func toggleNewPasswordVisibility() {
-        isNewPasswordSecure.toggle()
-    }
-    
-    /// Toggle secure text entry for retype password field.
-    func toggleRetypePasswordVisibility() {
-        isRetypePasswordSecure.toggle()
-    }
-    
     /// Handle continue button tap.
     func continueAction() async {
         guard isContinueButtonEnabled, !isLoading else { return }
-        
         dismissKeyboard()
         
         do {
             // Wait for keyboard dismissal
-            try await Task.sleep(nanoseconds: 100_000_000) // 0.1 seconds
+            try await Task.sleep(nanoseconds: 200_000_000) // 0.2 seconds
             isLoading = true
             
             if (tokens?.isPasswordGenerated ?? false) && (tokens?.awaiting2fa ?? false) {
@@ -182,17 +153,12 @@ class UpdatePasswordViewModel: ObservableObject {
     // MARK: - Private Validation Logic
     
     private func validateNewPassword(_ password: String) {
-        // Contains uppercase
         newPasswordHasUppercase = password != password.lowercased()
-        
-        // Contains a number
         newPasswordHasNumber = password.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil
         
-        // Contains special character
         let characterSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
         newPasswordHasSpecial = password.rangeOfCharacter(from: characterSet.inverted) != nil
         
-        // Length requirement
         newPasswordHasRequiredLength = password.count >= 10
     }
     
@@ -234,7 +200,6 @@ class UpdatePasswordViewModel: ObservableObject {
     }
     
     // MARK: - Network Logic
-    
     private func updatePassword() async throws {
 //        try await API.updatePassword(oldPassword: currentPassword, password: newPassword)
     }
@@ -265,21 +230,10 @@ class UpdatePasswordViewModel: ObservableObject {
         let errorCode = (error as NSError).code
         
         switch errorCode {
-        case 403:
-            currentPasswordError = currentPasswordErrorText
-            
-        case 409:
-            retypePasswordError = "current_password_same_has_new_one".localized()
-            
-        case 410:
-            // Handle specific error case
-            break
-            
-        case 411:
-            alertInfo = AlertInfo(title: "Warning", message: "password_100_times_hibp".localized())
-            
-        default:
-            alertInfo = AlertInfo(title: "Error", message: "server_error_retry".localized())
+        case 403: currentPasswordError = currentPasswordErrorText
+        case 409: retypePasswordError = "current_password_same_has_new_one".localized()
+        case 411: alertInfo = AlertInfo(title: "Warning", message: "password_100_times_hibp".localized())
+        default: alertInfo = AlertInfo(title: "error".localized(), message: "server_error_retry".localized())
         }
     }
     

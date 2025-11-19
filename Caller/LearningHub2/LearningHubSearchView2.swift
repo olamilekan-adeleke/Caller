@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LearningHubSearchView: View {
+struct LearningHubSearchView2: View {
     @State private var searchText = ""
     
     var body: some View {
@@ -27,7 +27,7 @@ struct LearningHubSearchView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 15) {
                     ForEach(0..<8) { _ in
-                        SearchItemCardView(width: 290)
+                        SearchItemCardView2(width: 290)
                     }
                 }.padding(.horizontal)
             }
@@ -35,7 +35,7 @@ struct LearningHubSearchView: View {
     }
 }
 
-private struct SearchItemCardView: View {
+private struct SearchItemCardView2: View {
     var width: CGFloat
     
     var body: some View {
@@ -74,8 +74,8 @@ private struct SearchItemCardView: View {
     }
 }
 
-struct LearningHubSearchView_Previews: PreviewProvider {
+struct LearningHubSearchView2_Previews: PreviewProvider {
     static var previews: some View {
-        LearningHubSearchView()
+        LearningHubSearchView2()
     }
 }

@@ -2,7 +2,7 @@ import SwiftUI
 
 import SwiftUI
 
-struct LearningHubItemCard: View {
+struct LearningHubItemCard2: View {
     var width: CGFloat
     let isNew: Bool
     let hasBookmarked: Bool
@@ -26,7 +26,7 @@ struct LearningHubItemCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
-                AsyncImageView(url: imageUrl, width: width, height: 145)
+                AsyncImageView2(url: imageUrl, width: width, height: 145)
                 
                 HStack(alignment: .top) {
                     if isNew {
@@ -78,7 +78,7 @@ struct LearningHubItemCard: View {
     }
 }
 
-struct AsyncImageView: View {
+struct AsyncImageView2: View {
     @State private var image: UIImage?
     @State private var isLoading = false
     let url: URL?
@@ -132,7 +132,7 @@ struct AsyncImageView: View {
 
 // MARK: - Usage Example
 #Preview {
-    LearningHubItemCard(
+    LearningHubItemCard2(
         width: 300,
         isNew: true,
         hasBookmarked: false,
@@ -144,12 +144,12 @@ struct AsyncImageView: View {
     )
 }
 
-struct ArticleCardView: View {
+struct ArticleCardView2: View {
     var width: CGFloat
 
     var body: some View {
         VStack(alignment: .leading) {
-            AsyncImageView(
+            AsyncImageView2(
                 url: URL(string: "https://images.pexels.com/photos/6424586/pexels-photo-6424586.jpeg?auto=compress&cs=tinysrgb&w=400"),
                 width: width,
                 height: 140,

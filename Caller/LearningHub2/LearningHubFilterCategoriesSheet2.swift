@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FilterCategoriesSheet: View {
+struct FilterCategoriesSheet2: View {
     @Binding var isPresented: Bool
     @Binding var selectedCategory: String?
     let categories: [String]
@@ -29,7 +29,7 @@ struct FilterCategoriesSheet: View {
                 ForEach(Array(categories.enumerated()), id: \.element) { index, category in
                     VStack(alignment: .center) {
                         HStack( spacing: 12) {
-                            CircularCheckbox(isSelected: selectedCategory == category)
+                            CircularCheckbox2(isSelected: selectedCategory == category)
                             Text(category)
                                 .font(SamaCarbonateFontLibrary.Title.regularMedium)
                             
@@ -55,7 +55,7 @@ struct FilterCategoriesSheet: View {
     }
 }
 
-struct CircularCheckbox: View {
+struct CircularCheckbox2: View {
     let isSelected: Bool
     let size: CGFloat = 28
     

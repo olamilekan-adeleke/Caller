@@ -402,3 +402,346 @@ struct SearchBar: View {
         .padding(.horizontal, 8)
     }
 }
+
+struct PrimaryButton: View {
+    // Enum to define the various styles of the button.
+    enum Style: Equatable {
+        case primary
+        case secondary
+        case tertiary
+        case disabled
+        case loading
+    }
+
+    let title: String
+    let style: Style
+    let rightImage: UIImage?
+    let leftImage: UIImage?
+    let isCompact: Bool
+    let action: () -> Void
+
+    init(
+        title: String,
+        style: Style,
+        isCompact: Bool = false,
+        leftImage: UIImage? = nil,
+        rightImage: UIImage? = nil,
+        action: @escaping () -> Void) {
+        self.title = title
+        self.style = style
+        self.leftImage = leftImage
+        self.rightImage = rightImage
+        self.isCompact = isCompact
+        self.action = action
+    }
+
+    // Determine if the button should be disabled based on its style.
+    private var isButtonDisabled: Bool {
+        style == .disabled || style == .loading
+    }
+
+    var body: some View {
+        Button(action: action) {
+            // The content of the button changes based on the style.
+            ZStack {
+                HStack {
+                    if let image = leftImage {
+                        Image(uiImage: image)
+                            .frame(width: 20, height: 20)
+                    }
+
+                    Text(getTitle(for: style))
+                        .font(Font(UIFont.custom(type: .foundersGroteskSemibold, size: 20)))
+
+                    if let image = rightImage {
+                        Image(uiImage: image)
+                            .frame(width: 20, height: 20)
+                    }
+                }
+            }
+            .font(.headline)
+            .foregroundColor(foregroundColor(for: style))
+            .padding(.vertical, 20)
+            .padding(.horizontal, 32)
+            .if(!isCompact) { view in
+                view.frame(maxWidth: .infinity)
+            }
+            .background(Capsule().fill(backgroundColor(for: style)))
+        }
+        .disabled(isButtonDisabled)
+        .animation(.easeInOut, value: style)
+    }
+
+    // Helper function to get the background color for a given style.
+    private func backgroundColor(for style: Style) -> Color {
+        switch style {
+        case .primary, .loading:
+            return SamaCarbonateColorTheme.primaryGreen
+
+        case .secondary:
+            return SamaCarbonateColorTheme.primaryGrey
+
+        case .tertiary:
+            return .white
+
+        case .disabled:
+            return SamaCarbonateColorTheme.inactiveGray
+        }
+    }
+
+    // Helper function to get the foreground (text) color for a given style.
+    private func foregroundColor(for style: Style) -> Color {
+        switch style {
+        case .primary, .secondary, .loading, .disabled:
+            return .white
+
+        case .tertiary:
+            return SamaCarbonateColorTheme.primaryGreen
+        }
+    }
+
+    private func getTitle(for style: Style) -> String {
+        switch style {
+        case .loading:
+            return "in_progress".localized()
+
+        default:
+            return title
+        }
+    }
+}
+
+#Preview {
+    VStack {
+        PrimaryButton(title: "Next", style: .primary, isCompact: true) {
+            print("tapped")
+        }
+
+        PrimaryButton(title: "Next", style: .primary) {
+            print("tapped")
+        }
+
+        PrimaryButton(title: "Next", style: .secondary, isCompact: true) {
+            print("tapped")
+        }
+
+        PrimaryButton(title: "Next", style: .secondary) {
+            print("tapped")
+        }
+
+        PrimaryButton(title: "Next", style: .tertiary, isCompact: true) {
+            print("tapped")
+        }
+
+        PrimaryButton(title: "Next", style: .tertiary) {
+            print("tapped")
+        }
+
+        PrimaryButton(title: "Next", style: .disabled, isCompact: true) {
+            print("tapped")
+        }
+
+        PrimaryButton(title: "Next", style: .disabled) {
+            print("tapped")
+        }
+    }
+}
+
+
+
+// Remove default cell padding
+extension View {
+    func listRowInsets(_ insets: EdgeInsets) -> some View {
+        self.transformEnvironment(\.defaultMinListRowHeight) { _ in }
+            .padding(insets)
+    }
+
+    @ViewBuilder
+    func conditionalListRowSeparator() -> some View {
+        if #available(iOS 15.0, *) {
+            self.listRowSeparator(.hidden)
+        } else {
+            self
+        }
+    }
+
+    @ViewBuilder
+    func conditionalIgnoresSafeArea() -> some View {
+        if #available(iOS 14.0, *) {
+            self.ignoresSafeArea(.keyboard)
+        } else {
+            self
+        }
+    }
+
+    /// Applies a modifier conditionally.
+    @ViewBuilder
+    func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
+    }
+
+    /// Applies one of two modifiers conditionally.
+    @ViewBuilder
+    func `if`<TrueContent: View, FalseContent: View>(
+        _ condition: Bool,
+        if ifTransform: (Self) -> TrueContent,
+        else elseTransform: (Self) -> FalseContent
+    ) -> some View {
+        if condition {
+            ifTransform(self)
+        } else {
+            elseTransform(self)
+        }
+    }
+}
+
+/// Represents an alert to be shown in the UI.
+struct AlertInfo: Identifiable {
+    let id = UUID()
+    let title: String
+    let message: String
+}
+
+
+struct TokensMapper {
+    let accessToken: String
+    let refreshToken: String
+    var awaiting2fa: Bool
+    var isPhoneNeeded: Bool
+    let phoneNumber2fa: String?
+    let numberOfOnboardingQuestions: Int?
+    let isPasswordGenerated: Bool?
+    let onboardingQuestions: OnboardingQuestionsMapper?
+}
+
+extension TokensMapper: Decodable, Encodable {
+    enum TokensDecodableKeys: String, CodingKey {
+        case accessToken, refreshToken, awaiting2fa, isPhoneNeeded, phoneNumber2fa, numberOfOnboardingQuestions, isPasswordGenerated, onboardingQuestions
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: TokensDecodableKeys.self)
+
+        accessToken = try container.decode(String.self, forKey: .accessToken)
+        refreshToken = try container.decode(String.self, forKey: .refreshToken)
+        awaiting2fa = try container.decode(Bool.self, forKey: .awaiting2fa)
+        isPhoneNeeded = try container.decode(Bool.self, forKey: .isPhoneNeeded)
+        phoneNumber2fa = try container.decodeIfPresent(String.self, forKey: .phoneNumber2fa)
+        numberOfOnboardingQuestions = try container.decodeIfPresent(Int.self, forKey: .numberOfOnboardingQuestions)
+        isPasswordGenerated = try container.decodeIfPresent(Bool.self, forKey: .isPasswordGenerated)
+        onboardingQuestions = try container.decodeIfPresent(OnboardingQuestionsMapper.self, forKey: .onboardingQuestions)
+    }
+}
+
+struct OnboardingQuestionsMapper {
+    let ageRange: EnabledMapper?
+    let gender: EnabledMapper?
+}
+
+extension OnboardingQuestionsMapper: Decodable, Encodable {
+    enum OnboardingQuestionsDecodableKeys: String, CodingKey {
+        case ageRange, gender
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: OnboardingQuestionsDecodableKeys.self)
+
+        ageRange = try container.decodeIfPresent(EnabledMapper.self, forKey: .ageRange)
+        gender = try container.decodeIfPresent(EnabledMapper.self, forKey: .gender)
+    }
+}
+
+struct EnabledMapper {
+    let enabled: Bool?
+}
+
+extension EnabledMapper: Decodable, Encodable {
+    enum EnabledDecodableKeys: String, CodingKey {
+        case enabled
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: EnabledDecodableKeys.self)
+
+        enabled = try container.decodeIfPresent(Bool.self, forKey: .enabled)
+    }
+}
+
+
+class AppLanguageManager {
+    // MARK: - Properties
+    static var shared = AppLanguageManager()
+    private let languageSetKey = "language_set"
+    let acceptedLanguages = ["fr", "en"]
+
+    // MARK: - Lifecycle
+    // MARK: - Publics
+    func isLangugageSet() -> Bool {
+        UserDefaults.standard.string(forKey: languageSetKey) != nil
+    }
+
+    func currentLanguageSet() -> String? {
+        UserDefaults.standard.string(forKey: languageSetKey) ?? Locale.current.languageCode
+    }
+
+    func updateLanguageSet(language: String) {
+        if acceptedLanguages.contains(language) {
+            DispatchQueue.main.async {
+                UserDefaults.standard.setValue(language, forKey: self.languageSetKey)
+                NotificationCenter.default.post(name: .appLanguageUpdated, object: nil)
+            }
+        }
+    }
+
+    // MARK: - Privates
+    // MARK: - Actions
+}
+
+
+struct PushInfo {
+    let storyboard: String
+    let viewController: String
+    let params: Any?
+}
+
+extension Notification.Name {
+    static let coachProfileUpdated = Notification.Name("coachProfileUpdated")
+
+    static let pushFromRoot = Notification.Name("pushFromRoot")
+    static let displayTabBarIndex = Notification.Name("displayTabBarIndex")
+
+    static let chatMergedChannelsPopulated = Notification.Name("chatMergedChannelsPopulated")
+    static let chatChannelsUpdated = Notification.Name("chatChannelsUpdated")
+    static let chatNewMessage = Notification.Name("chatNewMessage")
+    static let chatMessageDeleted = Notification.Name("chatMessageDeleted")
+    static let chatLoadingError = Notification.Name("chatLoadingError")
+    static let typingStarted = Notification.Name("typingStarted")
+    static let typingEnded = Notification.Name("typingEnded")
+
+    static let bookingNeedsRefresh = Notification.Name("bookingNeedsRefresh")
+    static let bookingReceived = Notification.Name("bookingReceived")
+
+    static let unreadMessagesUpdated = Notification.Name("unreadMessagesUpdated")
+    static let oktaLoginSuccess = Notification.Name("oktaLoginSuccess")
+
+    static let audioMessagePlay = Notification.Name("audioMessagePlay")
+    static let audioMessagePause = Notification.Name("audioMessagePause")
+    static let audioMessageStop = Notification.Name("audioMessageStop")
+    static let audioMessageDurationsUpdated = Notification.Name("audioMessageDurationsUpdated")
+
+    static let mediaMessageStartLoading = Notification.Name("mediaMessageStartLoading")
+    static let mediaMessageStopLoading = Notification.Name("mediaMessageStopLoading")
+
+    static let appLanguageUpdated = Notification.Name("appLanguageUpdated")
+
+    static let UserDidGoogleSignIn = Notification.Name("UserDidGoogleSignIn")
+
+    static let completedCheckins = Notification.Name("completedCheckins")
+
+    static let checklistNeedsUpdate = Notification.Name("checklistNeedsUpdate")
+}
+

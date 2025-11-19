@@ -7,6 +7,58 @@
 
 import SwiftUI
 
+
+
+enum SamaCarbonateColorTheme {
+    static let primaryOrange = Color("primaryOrange")
+    static let primaryRedColor = Color("primaryRedColor")
+    static let darkBlueBackgroundColor = Color("darkBlueBackgroundColor")
+    static let primaryBlue = Color("primaryBlue")
+    static let primaryDarkBlue = Color("primaryDarkBlue")
+    static let disabledTextColor = Color("disabledTextColor")
+    static let primaryTextColor = Color("primaryTextColor")
+    static let textViewBackgroundColor = Color("textViewBackgroundColor")
+    static let blueBackgroundColor = Color("blueBackgroundColor")
+    static let greyBorderColor = Color("greyBorderColor")
+    static let greyBackgroundColor = Color("greyBackgroundColor")
+    static let altYellow = Color("altYellow")
+    static let navyBlue = Color("navyBlue")
+    static let primaryGreenColor = Color("primaryGreenColor")
+    static let primaryGrey = Color("primaryGrey")
+    static let disabledButtons = Color("disabledButtons")
+    static let greyBlueBackgroundColor = Color("greyBlueBackgroundColor")
+    static let primaryGreen = Color("primaryGreen")
+    static let inactiveGray = Color("inactiveGray")
+}
+
+
+extension String {
+    func localized() -> String {
+        // We force what we previously found from API
+        if let appLanguage = AppLanguageManager.shared.currentLanguageSet(),
+           let langPath = Bundle.main.path(forResource: appLanguage, ofType: "lproj"),
+           let bundle = Bundle(path: langPath) {
+            return bundle.localizedString(forKey: self, value: "", table: nil)
+        }
+        return NSLocalizedString(self, comment: "")
+    }
+}
+
+enum CustomFont: String {
+    case foundersGroteskBold = "FoundersGrotesk-Bold"
+    case foundersGroteskLight = "FoundersGrotesk-Light"
+    case foundersGroteskMedium = "FoundersGrotesk-Medium"
+    case foundersGroteskRegular = "FoundersGrotesk-Regular"
+    case foundersGroteskSemibold = "FoundersGrotesk-Semibold"
+}
+
+extension UIFont {
+    static func custom(type: CustomFont, size: CGFloat) -> UIFont {
+        UIFont(name: type.rawValue, size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+}
+
+
 @main
 struct CallerApp: App {
     var body: some Scene {
@@ -110,3 +162,56 @@ struct SamaButtonStyle: ButtonStyle {
     }
 }
 
+
+
+
+struct LoadingView: View {
+    var tintColor: Color
+    
+    init(tint: Color = SamaCarbonateColorTheme.primaryOrange) {
+        tintColor = tint
+    }
+    
+    var body: some View {
+        Group {
+            if #available(iOS 14.0, *) {
+                // iOS 14+ uses ProgressView
+                ProgressView("")
+                    .progressViewStyle(CircularProgressViewStyle(
+                        tint: tintColor
+                    ))
+            } else {
+                // iOS 13 fallback
+                VStack(spacing: 8) {
+                    UIKitActivityIndicator(isAnimating: true, style: .large)
+                    Text("")
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
+
+/// A SwiftUI wrapper for `UIActivityIndicatorView`.
+struct UIKitActivityIndicator: UIViewRepresentable {
+    var isAnimating: Bool
+    let style: UIActivityIndicatorView.Style
+    
+    func makeUIView(context: Context) -> UIActivityIndicatorView {
+        let indicator = UIActivityIndicatorView(style: style)
+        indicator.startAnimating() // Automatically start animating
+        return indicator
+    }
+    
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {
+        if isAnimating {
+            uiView.startAnimating()
+        } else {
+            uiView.stopAnimating()
+        }
+    }
+}
+
+#Preview {
+    LoadingView()
+}

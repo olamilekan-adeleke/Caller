@@ -567,3 +567,6 @@ While Sama services are paid by your employer, any interaction you have with Sam
 "action_points" = "Action points";
 "key_takeaways" = "Key takeaways";
 "is_this_useful" = "Did you find this useful?";
+
+"new_password_title" = "Change your password";
+"hint_password_label" = "Your password must contain a minimum of 10 characters and consist of at least 1 uppercase letter, lowercase letter, number and a special character";

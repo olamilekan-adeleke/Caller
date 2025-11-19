@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LearningHubHomePageView: View {
+struct LearningHubHomePageView2: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -16,7 +16,7 @@ struct LearningHubHomePageView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 15) {
                     ForEach(0..<5) { _ in
-                        ArticleCardView(width: 290)
+                        ArticleCardView2(width: 290)
                     }
                 }
             }
@@ -24,10 +24,10 @@ struct LearningHubHomePageView: View {
     }
 }
 
-struct LearningHubHomePageView_Previews: PreviewProvider {
+struct LearningHubHomePageView2_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LearningHubHomePageView()
+            LearningHubHomePageView2()
         }
     }
 }

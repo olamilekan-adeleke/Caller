@@ -28,7 +28,7 @@ struct LearningHubFullScreenView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
                     ForEach(0..<5) { idx in
-                        LearningHubItemCard(
+                        LearningHubItemCard2(
                             width: UIScreen.main.bounds.width - 30,
                             isNew: idx == 0,
                             hasBookmarked: idx % 2 == 0,
@@ -46,7 +46,7 @@ struct LearningHubFullScreenView: View {
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .sheet(isPresented: $showFilterSheet) {
-            FilterCategoriesSheet(
+            FilterCategoriesSheet2(
                 isPresented: $showFilterSheet,
                 selectedCategory: $selectedCategory,
                 categories: categories
@@ -57,7 +57,7 @@ struct LearningHubFullScreenView: View {
     @ViewBuilder
     func searchBarView()  -> some View {
         HStack(spacing: 6) {
-            NavigationLink(destination: LearningHubSearchView()) {
+            NavigationLink(destination: LearningHubSearchView2()) {
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
