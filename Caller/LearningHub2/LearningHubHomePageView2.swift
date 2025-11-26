@@ -8,7 +8,7 @@ struct LearningHubHomePageView2: View {
                     .font(SamaCarbonateFontLibrary.Title.smallBold)
                     .foregroundColor(.black)
                 Spacer()
-                NavigationLink(destination: LearningHubFullScreenView()) {
+                NavigationLink(destination: LearningHubFullScreenView2()) {
                     Text("View all").foregroundColor(Color(Constants.Colors.blueBackgroundColor))
                 }
             }

@@ -96,9 +96,16 @@ struct RoundedCorner: Shape {
 }
 
 
+
 /// Naming convenstion is Size + Weight
 enum SamaCarbonateFontLibrary {
     enum Title {
+        /// 30pt Bold
+        static let xtralargeBold = Font.system(size: SamaCarbonateSize.Text.xLarge, weight: .bold)
+        /// 30pt regular
+        static let xtralargeMedium = Font.system(size: SamaCarbonateSize.Text.xLarge, weight: .medium)
+        
+        static let bigMedium = Font.system(size: SamaCarbonateSize.Text.xLarge, weight: .medium)
         /// 17pt Bold
         static let largeBold = Font.system(size: SamaCarbonateSize.Text.large, weight: .bold)
         /// 17pt  regular
@@ -108,7 +115,7 @@ enum SamaCarbonateFontLibrary {
         /// 15pt Bold
         static let smallBold = Font.system(size: SamaCarbonateSize.Text.small, weight: .bold)
     }
-    
+
     enum Body {
         /// 17pt Regular
         static let large = Font.system(size: SamaCarbonateSize.Text.large)
@@ -116,8 +123,10 @@ enum SamaCarbonateFontLibrary {
         static let medium = Font.system(size: SamaCarbonateSize.Text.regular)
         /// 13pt Regular
         static let small = Font.system(size: SamaCarbonateSize.Text.small)
+        /// 17pt  regular
+        static let regularBold = Font.system(size: SamaCarbonateSize.Text.regular, weight: .bold)
     }
-    
+
     enum Button {
         /// 17pt Semibold
         static let boldPrimary = Font.system(size: SamaCarbonateSize.Text.regular, weight: .semibold)
@@ -125,20 +134,21 @@ enum SamaCarbonateFontLibrary {
         /// 15pt Medium
         static let secondary = Font.system(size: SamaCarbonateSize.Text.small, weight: .regular)
     }
-    
+
     enum Caption {
+        static let small = Font.system(size: SamaCarbonateSize.Text.caption, weight: .medium)
+        static let smallBold = Font.system(size: SamaCarbonateSize.Text.caption, weight: .bold)
         /// 13pt Regular
         static let regular = Font.system(size: SamaCarbonateSize.Text.xSmall)
         /// 13pt Medium
         static let medium = Font.system(size: SamaCarbonateSize.Text.xSmall, weight: .medium)
-        /// 13pt Bold
-        static let bold = Font.system(size: SamaCarbonateSize.Text.xSmall, weight: .bold)
     }
 }
 
 
 enum SamaCarbonateSize {
     enum Text {
+        static let caption: CGFloat = 11
         static let xSmall: CGFloat = 13
         static let small: CGFloat = 15
         static let regular: CGFloat = 16

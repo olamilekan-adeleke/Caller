@@ -72,7 +72,7 @@ struct SessionCardView: View {
                         .foregroundColor(.gray)
                     
                     Text(status)
-                        .font(SamaCarbonateFontLibrary.Caption.bold)
+//                        .font(SamaCarbonateFontLibrary.Caption.bold)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)
                         .background(
@@ -151,7 +151,7 @@ struct PreviewCardView: View {
             }
             
             Text("Unknow")
-                .font(SamaCarbonateFontLibrary.Caption.bold)
+//                .font(SamaCarbonateFontLibrary.Caption.bold)
                 .foregroundColor(Color("primaryOrange"))
                 .frame(maxWidth: .infinity, alignment: .center)
         }

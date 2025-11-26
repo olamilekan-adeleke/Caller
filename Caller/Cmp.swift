@@ -745,3 +745,68 @@ extension Notification.Name {
     static let checklistNeedsUpdate = Notification.Name("checklistNeedsUpdate")
 }
 
+public struct FeedbackButton: View {
+    let iconName: String
+    let isSelected: Bool
+    let isThumbsUp: Bool
+    let action: () -> Void
+
+    public var body: some View {
+        Button(action: action) {
+            Image(systemName: iconName)
+                .font(.body)
+                .padding(8)
+                .foregroundColor(
+                    isSelected ? (
+                        isThumbsUp
+                        ? SamaCarbonateColorTheme.primaryGreenColor
+                        : SamaCarbonateColorTheme.primaryRedColor)
+                    : SamaCarbonateColorTheme.primaryGrey
+                )
+                .background(
+                    Circle()
+                        .fill(SamaCarbonateColorTheme.navyBlue.opacity(0.1))
+                        .frame(width: 30, height: 30)
+                )
+                .cornerRadius(8)
+        }
+    }
+}
+
+
+// A reusable custom segmented picker view
+struct CustomSegmentedPicker<SelectionValue: Hashable>: View {
+    @Binding var selection: SelectionValue
+    let tabs: [SelectionValue]
+    let titleForTab: (SelectionValue) -> String
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(tabs, id: \.self) { tab in
+                Text(titleForTab(tab))
+                    .font(.system(size: 14, weight: .semibold))
+                    .frame(maxWidth: .infinity)
+                    .padding(10)
+                    .foregroundColor(selection == tab ? .black : .gray)
+                    .background(
+                        Capsule()
+                            .fill(selection == tab ? Color.white : Color.clear)
+                            .shadow(
+                                color: selection == tab ? Color.black.opacity(0.1) : .clear,
+                                radius: 2, y: 1
+                            )
+                    )
+                    .contentShape(Capsule())
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            selection = tab
+                        }
+                    }
+            }
+        }
+        .padding(4)
+        .background(Color(UIColor.systemGray6))
+        .clipShape(Capsule())
+        .animation(.easeInOut(duration: 0.3), value: selection)
+    }
+}

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LearningHubFullScreenView: View {
+struct LearningHubFullScreenView2: View {
     @State private var searchText = ""
     @State private var showFilterSheet = false
     @State private var selectedCategory: String? = "Show All"
@@ -104,10 +104,10 @@ struct LearningHubFullScreenView: View {
     }
 }
 
-struct LearningHubFullScreenView_Previews: PreviewProvider {
+struct LearningHubFullScreenView2_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LearningHubFullScreenView()
+            LearningHubFullScreenView2()
         }
     }
 }

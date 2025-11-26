@@ -50,7 +50,7 @@ private struct SearchItemCardView2: View {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 5) {
                     Text("PERFORMANCE")
-                        .font(SamaCarbonateFontLibrary.Caption.bold)
+//                        .font(SamaCarbonateFontLibrary.Caption.bold)
                         .foregroundColor(Color(Constants.Colors.blueBackground))
                     
                     Text("- 23 OCT, 2025")
